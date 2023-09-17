@@ -31,12 +31,20 @@
                     <div class="mb-3 innerContain">
                         <label for="gender">Gender:</label>
                         <input matInput class="form-control" id="gender" type="text" formControlName="gender">
+                        <div class="text-danger"
+                            *ngIf="userForm.get('gender')?.hasError('required') && userForm.get('gender')?.touched">
+                            Gender is required.
+                        </div>
                     </div>
                 </div>
                 <div class="manali">
                     <div class="mb-3 innerContain">
                         <label for="mobile">Mobile:</label>
                         <input matInput class="form-control" id="mobile" type="text" formControlName="mobile">
+                        <div class="text-danger"
+                            *ngIf="userForm.get('mobile')?.hasError('required') && userForm.get('mobile')?.touched">
+                            Mobile is required.
+                        </div>
                     </div>
                 </div>
                 <div class="firstWizardButton">
@@ -51,29 +59,45 @@
                     <div class="mb-3 innerContain">
                         <label for="street">Street:*</label>
                         <input class="form-control" id="street" type="text" formControlName="street">
+                        <div class="text-danger"
+                            *ngIf="userForm.get('address')?.get('street')?.hasError('required') && userForm.get('address')?.get('street')?.touched">
+                            Street is required.
+                        </div>
                     </div>
                 </div>
                 <div class="manali">
                     <div class="mb-3 innerContain">
                         <label for="city">City:</label>
                         <input class="form-control" id="city" type="text" formControlName="city">
+                        <div class="text-danger"
+                            *ngIf="userForm.get('address')?.get('city')?.hasError('required') && userForm.get('address')?.get('city')?.touched">
+                            City is required.
+                        </div>
                     </div>
                 </div>
                 <div class="manali">
                     <div class="mb-3 innerContain">
                         <label for="state">State:</label>
                         <input class="form-control" id="state" type="text" formControlName="state">
+                        <div class="text-danger"
+                            *ngIf="userForm.get('address')?.get('state')?.hasError('required') && userForm.get('address')?.get('state')?.touched">
+                            State is required.
+                        </div>
                     </div>
                 </div>
                 <div class="manali">
                     <div class="mb-3 innerContain">
                         <label for="zipCode">ZipCode:</label>
                         <input class="form-control" id="zipCode" type="text" formControlName="zipCode">
+                        <div class="text-danger"
+                            *ngIf="userForm.get('address')?.get('zipCode')?.hasError('required') && userForm.get('address')?.get('zipCode')?.touched">
+                            Zipcode is required.
+                        </div>
                     </div>
                 </div>
                 <div class="firstWizardButton">
                     <button class="btn btn-primary back" mat-button matStepperPrevious>Back</button>
-                    <button class="btn btn-primary next mx-2" mat-button matStepperNext (click)="validateStep2()">Next</button>
+                    <button class="btn btn-primary next mx-2" mat-button matStepperNext [disabled]="!validateStep2()" (click)="datasave2()">Next</button>
                 </div>
             </mat-step>
         </div>
@@ -84,18 +108,30 @@
                 <div class="mb-3 innerContain">
                     <label for="company">Company Name:*</label>
                     <input class="form-control" id="company" type="text" formControlName="company">
+                    <div class="text-danger"
+                            *ngIf="userForm.get('employment')?.get('company')?.hasError('required') && userForm.get('employment')?.get('company')?.touched">
+                            Company  is required.
+                        </div>
                 </div>
             </div>
             <div class="manali">
                 <div class="mb-3 innerContain">
                     <label for="startYear">Start Year:</label>
                     <input class="form-control" id="startYear" type="text" formControlName="startYear">
+                    <div class="text-danger"
+                            *ngIf="userForm.get('employment')?.get('startYear')?.hasError('required') && userForm.get('employment')?.get('startYear')?.touched">
+                            Start year  is required.
+                        </div>
                 </div>
             </div>
             <div class="manali">
                 <div class="mb-3 innerContain">
                     <label for="endYear">End Year:</label>
                     <input class="form-control" id="endYear" type="text" formControlName="endYear">
+                    <div class="text-danger"
+                            *ngIf="userForm.get('employment')?.get('endYear')?.hasError('required') && userForm.get('employment')?.get('endYear')?.touched">
+                            End Year  is required.
+                        </div>
                 </div>
             </div>
             <div class="firstWizardButton">

@@ -62,17 +62,7 @@ export class ProfileComponent implements OnInit {
   }
 
   enableEdit(){
-    this.userForm.controls['name'].enable()
-    this.userForm.controls['email'].enable()
-    this.userForm.controls['mobile'].enable()
-    this.userForm.controls['gender'].enable()
-    this.userForm.controls['address'].controls['street'].enable()
-    this.userForm.controls['address'].controls['city'].enable()
-    this.userForm.controls['address'].controls['state'].enable()
-    this.userForm.controls['address'].controls['zipCode'].enable()
-    this.userForm.controls['employment'].controls['company'].enable()
-    this.userForm.controls['employment'].controls['startYear'].enable()
-    this.userForm.controls['employment'].controls['endYear'].enable()
+    this.userForm.enable()
     this.submitButton = false;
   }
   updateData(){
