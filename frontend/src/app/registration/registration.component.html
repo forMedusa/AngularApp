@@ -1,0 +1,109 @@
+    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <form [formGroup]="userForm">
+            <mat-step>
+
+                <ng-template matStepLabel>Fill out your name</ng-template>
+                <div class="manali">
+                    <div class="mb-3 innerContain">
+                        <label for="name">Name:*</label>
+                        <input class="form-control" id="name" type="text" formControlName="name" required>
+                        <div class="text-danger"
+                            *ngIf="userForm.get('name')?.hasError('required') && userForm.get('name')?.touched">
+                            Name is required.
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="userForm.get('name')?.hasError('pattern') && userForm.get('name')?.touched">
+                            Only alphabets and spaces are allowed.
+                        </div>
+                    </div>
+                </div>
+                <div class="manali">
+                    <div class="mb-3 innerContain">
+                        <label for="email">Email:</label>
+                        <input class="form-control" id="email" type="email" formControlName="email">
+                        <div class="text-danger"
+                            *ngIf="userForm.get('email')?.hasError('required') && userForm.get('email')?.touched">
+                            Email is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="manali">
+                    <div class="mb-3 innerContain">
+                        <label for="gender">Gender:</label>
+                        <input matInput class="form-control" id="gender" type="text" formControlName="gender">
+                    </div>
+                </div>
+                <div class="manali">
+                    <div class="mb-3 innerContain">
+                        <label for="mobile">Mobile:</label>
+                        <input matInput class="form-control" id="mobile" type="text" formControlName="mobile">
+                    </div>
+                </div>
+                <div class="firstWizardButton">
+                    <button class="btn btn-primary" mat-button matStepperNext [disabled]="!validateStep1()" (click)="datasave1()">Next</button>
+                </div>
+            </mat-step>
+            <div formGroupName="address">
+            <mat-step>
+                <!-- <form [formGroup]="userSignup"> -->
+                <ng-template matStepLabel>Fill out your address</ng-template>
+                <div class="manali">
+                    <div class="mb-3 innerContain">
+                        <label for="street">Street:*</label>
+                        <input class="form-control" id="street" type="text" formControlName="street">
+                    </div>
+                </div>
+                <div class="manali">
+                    <div class="mb-3 innerContain">
+                        <label for="city">City:</label>
+                        <input class="form-control" id="city" type="text" formControlName="city">
+                    </div>
+                </div>
+                <div class="manali">
+                    <div class="mb-3 innerContain">
+                        <label for="state">State:</label>
+                        <input class="form-control" id="state" type="text" formControlName="state">
+                    </div>
+                </div>
+                <div class="manali">
+                    <div class="mb-3 innerContain">
+                        <label for="zipCode">ZipCode:</label>
+                        <input class="form-control" id="zipCode" type="text" formControlName="zipCode">
+                    </div>
+                </div>
+                <div class="firstWizardButton">
+                    <button class="btn btn-primary back" mat-button matStepperPrevious>Back</button>
+                    <button class="btn btn-primary next mx-2" mat-button matStepperNext (click)="validateStep2()">Next</button>
+                </div>
+            </mat-step>
+        </div>
+        <div formGroupName="employment">
+        <mat-step>
+            <ng-template matStepLabel>Fill Employment Details</ng-template>
+            <div class="manali">
+                <div class="mb-3 innerContain">
+                    <label for="company">Company Name:*</label>
+                    <input class="form-control" id="company" type="text" formControlName="company">
+                </div>
+            </div>
+            <div class="manali">
+                <div class="mb-3 innerContain">
+                    <label for="startYear">Start Year:</label>
+                    <input class="form-control" id="startYear" type="text" formControlName="startYear">
+                </div>
+            </div>
+            <div class="manali">
+                <div class="mb-3 innerContain">
+                    <label for="endYear">End Year:</label>
+                    <input class="form-control" id="endYear" type="text" formControlName="endYear">
+                </div>
+            </div>
+            <div class="firstWizardButton">
+                <button class="btn btn-primary back" mat-button matStepperPrevious>Back</button>
+                <button class="btn btn-success next mx-2" [disabled]="!validateStep3()" (click)="submitData()">Submit</button>
+            </div>
+        </mat-step>
+    </div>
+    </form>
+    </mat-horizontal-stepper>
+

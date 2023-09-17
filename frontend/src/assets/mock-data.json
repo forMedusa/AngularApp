@@ -1,0 +1,47 @@
+{
+  "user": [
+    {
+      "id": 2,
+      "name": "Jane",
+      "lastName": "Smith",
+      "email": "jane@example.com",
+      "birthdate": "1988-03-25",
+      "gender": "Female",
+      "address": {
+        "street": "456 Elm St",
+        "city": "Another City",
+        "state": "NY",
+        "zipCode": "54321"
+      },
+      "education": {
+        "degree": "Master's in Computer Science",
+        "school": "Tech University",
+        "graduationYear": 2012
+      },
+      "employment": {
+        "company": "Tech Corp",
+        "position": "Software Engineer",
+        "startYear": 2012,
+        "endYear": null
+      }
+    },
+    {
+      "name": "Amaan Raja",
+      "email": "amaanraja98@gmail.com",
+      "gender": "Male",
+      "mobile": "08384874024",
+      "address": {
+        "street": "Flat no. 6, Madeena Mahal",
+        "city": "Najibabad",
+        "state": "Uttar Pradesh",
+        "zipCode": "246763"
+      },
+      "employment": {
+        "company": "Srijan",
+        "startYear": "2021",
+        "endYear": "2023"
+      },
+      "id": 3
+    }
+  ]
+}

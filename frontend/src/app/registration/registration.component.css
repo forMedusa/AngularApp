@@ -1,0 +1,24 @@
+.manali{
+    justify-content: center;
+    display: flex;
+}
+.manali label {
+    color: antiquewhite;
+}
+.innerContain{
+    width: 30%;
+}
+.firstWizardButton{
+    width: 30%;
+    margin: auto;
+}
+.back{
+    text-align: left;
+}
+.next{
+    text-align: end;
+}
+::ng-deep .mat-step-header{
+    pointer-events: none !important;
+    cursor: not-allowed;
+  }
